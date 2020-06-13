@@ -9,5 +9,6 @@
         <module name="Selenium4Examples" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
