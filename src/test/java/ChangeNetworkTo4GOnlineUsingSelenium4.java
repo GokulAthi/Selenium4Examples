@@ -6,7 +6,6 @@ import org.openqa.selenium.devtools.network.model.ConnectionType;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-import static org.openqa.selenium.devtools.network.Network.loadingFinished;
 
 public class ChangeNetworkTo4GOnlineUsingSelenium4 {
 
@@ -23,10 +22,8 @@ public class ChangeNetworkTo4GOnlineUsingSelenium4 {
         //Enable the Network
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 
-        //Set the network to offline
-        devTools.send(Network.emulateNetworkConditions(false, 50, 5000, 2000, Optional.of(ConnectionType.CELLULAR4G)));
-
-        devTools.addListener(loadingFinished(), loadingFinished -> System.out.println(loadingFinished.getRequestId()));
+        //Set the network to online and add connection type to cellular 4G
+        devTools.send(Network.emulateNetworkConditions(false,100,300000,150000, Optional.of(ConnectionType.CELLULAR4G)));
 
         driver.get("https://www.google.com");
 

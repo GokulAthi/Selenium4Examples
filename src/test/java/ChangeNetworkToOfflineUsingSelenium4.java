@@ -1,6 +1,5 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.log.Log;
 import org.openqa.selenium.devtools.network.Network;
 import org.openqa.selenium.devtools.network.model.ConnectionType;
 
