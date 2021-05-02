@@ -3,6 +3,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v91.log.Log;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ReadConsoleLogsUsingSelenium4 {
@@ -12,7 +13,7 @@ public class ReadConsoleLogsUsingSelenium4 {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         DevTools devTools = driver.getDevTools();
         //Create chrome dev tools session

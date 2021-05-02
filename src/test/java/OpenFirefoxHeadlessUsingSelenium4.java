@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class OpenFirefoxHeadlessUsingSelenium4 {
@@ -15,7 +16,7 @@ public class OpenFirefoxHeadlessUsingSelenium4 {
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         WebDriver driver = new FirefoxDriver(options);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
         driver.findElement(By.name("q")).sendKeys("Test");

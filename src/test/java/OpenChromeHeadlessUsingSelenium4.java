@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class OpenChromeHeadlessUsingSelenium4 {
@@ -15,7 +16,7 @@ public class OpenChromeHeadlessUsingSelenium4 {
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
         driver.findElement(By.name("q")).sendKeys("Test");
