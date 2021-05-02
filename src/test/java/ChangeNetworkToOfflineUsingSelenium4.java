@@ -1,10 +1,9 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v91.network.Network;
+import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
 
-import org.openqa.selenium.devtools.v87.network.Network;
-import org.openqa.selenium.devtools.v87.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v87.network.model.LoadingFailed;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;

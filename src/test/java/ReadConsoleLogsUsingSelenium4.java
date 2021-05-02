@@ -1,7 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v87.log.Log;
+import org.openqa.selenium.devtools.v91.log.Log;
 
 import java.util.concurrent.TimeUnit;
 
