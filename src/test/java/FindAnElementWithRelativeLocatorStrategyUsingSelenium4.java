@@ -1,22 +1,17 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-public class TakeScreenshotOfElementUsingSelenium4 {
+public class FindAnElementWithRelativeLocatorStrategyUsingSelenium4 {
 
     public static void main(String[] args) throws IOException {
-        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -24,9 +19,13 @@ public class TakeScreenshotOfElementUsingSelenium4 {
         driver.get("https://www.google.com");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='Google']")));
-        File file = logo.getScreenshotAs(OutputType.FILE);
-        FileHandler.copy(file, new File(System.getProperty("user.dir")+"/src/test/downloads/logo.png"));
+        WebElement imfeelingluckybutton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("form[role='search']>div>div>div[class]:not([style]) input[value*=' Feeling Lucky']")));
+
+        WebElement googlesearchbuttonfoundusingrelativelocator = driver.findElement(RelativeLocator.with(By.tagName("input")).toLeftOf(imfeelingluckybutton));
+        WebElement googlesearchtextboxfoundusingrelativelocator = driver.findElement(RelativeLocator.with(By.tagName("input")).above(imfeelingluckybutton));
+
+        googlesearchtextboxfoundusingrelativelocator.sendKeys("test");
+        googlesearchbuttonfoundusingrelativelocator.click();
 
         driver.quit();
     }

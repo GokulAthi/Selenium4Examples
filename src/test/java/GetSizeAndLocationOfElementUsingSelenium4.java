@@ -18,7 +18,7 @@ public class GetSizeAndLocationOfElementUsingSelenium4 {
         driver.get("https://www.google.com");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hplogo")));
+        WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[alt='Google']")));
 
         Rectangle logoSizeAndLocations = logo.getRect();
         System.out.println("Height = "+logoSizeAndLocations.height);
