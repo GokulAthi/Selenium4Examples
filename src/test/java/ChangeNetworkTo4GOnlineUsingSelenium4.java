@@ -1,12 +1,11 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v91.network.Network;
-import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v94.network.Network;
+import org.openqa.selenium.devtools.v94.network.model.ConnectionType;
 
 import java.time.Duration;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 
 public class ChangeNetworkTo4GOnlineUsingSelenium4 {

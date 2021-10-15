@@ -1,15 +1,11 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v91.network.Network;
-import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
-
-
+import org.openqa.selenium.devtools.v94.network.Network;
+import org.openqa.selenium.devtools.v94.network.model.ConnectionType;
 import java.time.Duration;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-
-
 
 public class ChangeNetworkToOfflineUsingSelenium4 {
 
@@ -32,7 +28,12 @@ public class ChangeNetworkToOfflineUsingSelenium4 {
 
         //devTools.addListener(loadingFailed(), loadingFailed -> System.out.println(loadingFailed.getErrorText()));
 
-        driver.get("https://www.google.com");
+        try {
+            driver.get("https://www.google.com");
+        }
+        catch(WebDriverException e){
+            System.out.println("Webdriver exception due to no internet? -> " + e.getMessage().contains("ERR_INTERNET_DISCONNECTED"));
+        }
 
         driver.quit();
     }
