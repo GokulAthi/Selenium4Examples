@@ -11,7 +11,7 @@ public class OpenFirefoxHeadlessUsingSelenium4 {
 
     public static void main(String[] args){
         //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\src\\main\\resources\\geckodriver.exe");
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.firefoxdriver().driverVersion("0.30.0").setup();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");

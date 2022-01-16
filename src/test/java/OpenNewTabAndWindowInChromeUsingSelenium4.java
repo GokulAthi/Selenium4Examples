@@ -18,11 +18,11 @@ public class OpenNewTabAndWindowInChromeUsingSelenium4 {
         System.out.println("Page title -> "+driver.getTitle());
 
         driver.switchTo().newWindow(WindowType.TAB);
-        driver.get("https://crazyautomator.com/how-to-invoke-chrome-browser-in-headless-mode-using-selenium-and-java/");
+        driver.get("https://simplytechnified.com/index.php/2021/05/02/find-elements-with-relative-locator-strategy-using-selenium-4-and-java/");
         System.out.println("Page title of new tab -> "+driver.getTitle());
 
         driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.get("https://crazyautomator.com/how-to-perform-scroll-in-android-app-using-appium-and-java/");
+        driver.get("https://simplytechnified.com/index.php/2021/05/30/get-and-set-screen-orientation-using-appium-and-java/");
         System.out.println("Page title of new window -> "+driver.getTitle());
 
         driver.quit();
