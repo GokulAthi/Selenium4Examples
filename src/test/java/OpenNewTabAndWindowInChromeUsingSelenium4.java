@@ -2,9 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class OpenNewTabAndWindowInChromeUsingSelenium4 {
 
@@ -18,11 +16,11 @@ public class OpenNewTabAndWindowInChromeUsingSelenium4 {
         System.out.println("Page title -> "+driver.getTitle());
 
         driver.switchTo().newWindow(WindowType.TAB);
-        driver.get("https://simplytechnified.com/index.php/2021/05/02/find-elements-with-relative-locator-strategy-using-selenium-4-and-java/");
+        driver.get("https://simplytechnified.com/find-elements-with-relative-locator-strategy-using-selenium-4-and-java/");
         System.out.println("Page title of new tab -> "+driver.getTitle());
 
         driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.get("https://simplytechnified.com/index.php/2021/05/30/get-and-set-screen-orientation-using-appium-and-java/");
+        driver.get("https://simplytechnified.com/read-server-client-logcat-logs-using-appium-and-java/");
         System.out.println("Page title of new window -> "+driver.getTitle());
 
         driver.quit();
